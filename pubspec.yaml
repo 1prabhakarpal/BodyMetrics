@@ -1,0 +1,50 @@
+name: weight_track
+description: A Flutter weight and BMI tracking application.
+
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=2.19.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  
+  # Database
+  sqflite: ^2.3.0
+  path: ^1.8.3
+  
+  # Charts
+  fl_chart: ^0.63.0
+  
+  # Date formatting
+  intl: ^0.18.1
+  
+  # File operations
+  path_provider: ^2.1.1
+  
+  # Sharing functionality
+  share_plus: ^7.2.1
+  
+  # CSV handling
+  csv: ^5.0.2
+  
+  # UI
+  cupertino_icons: ^1.0.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.0
+  flutter_launcher_icons: ^0.13.1
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/icons/image.png
+flutter_icons:
+  android: true
+  ios: true
+  image_path: "assets/icons/icon.png"
