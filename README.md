@@ -1,74 +1,135 @@
-Weight & BMI Tracker - Flutter App
-==================================
+# Weight & BMI Tracker - Flutter App 📊
 
-A Flutter mobile app for tracking weight and BMI with charts and data export.
+A Flutter-based mobile application for tracking weight and BMI (Body Mass Index) with data visualization.
 
-=== FEATURES ===
-- Track weight and BMI over time
-- Interactive line charts
-- Set personal health goals
-- Add daily/weekly entries
-- Export data to CSV
-- Dark/Light theme support
+---
 
-=== INSTALLATION ===
-PREREQUISITES:
-- Flutter SDK (latest stable)
-- Android Studio or Xcode
+## ✨ Features
 
-STEPS:
-1. Clone repository:
-   git clone https://github.com/1prabhakarpal/BodyMetrics.git
-   cd weight-tracker
+- 📈 Track weight and BMI over time  
+- 📊 Interactive charts for weight & BMI trends  
+- 🏆 Set and monitor health goals  
+- 🗕️ Date-based entries with historical data  
+- 📄 Export data to CSV for sharing  
+- 🌙 Dark/Light theme support  
 
-2. Install dependencies:
-   flutter pub get
+---
 
-3. Run app:
-   flutter run
+## ⚙️ Installation
 
-=== BUILDING APK ===
-1. Generate signing key:
-   keytool -genkey -v -keystore upload-keystore.jks -keyalg RSA -keysize 2048 -validity 10000 -alias my-key
+### Prerequisites
 
-2. Configure android/app/build.gradle with signing info
+- [Flutter SDK](https://flutter.dev/docs/get-started/install) (latest stable version)
+- Android Studio / Xcode (for emulators)
+- Physical device (optional but recommended)
 
-3. Build release APK:
-   flutter build apk --release
+### Steps
 
-APK Location: build/app/outputs/flutter-apk/app-release.apk
+Clone the repository:
 
-=== PROJECT STRUCTURE ===
+```bash
+git clone https://github.com/1prabhakarpal/BodyMetrics.git
+cd BodyMetrics
+```
+
+Install dependencies:
+
+```bash
+flutter pub get
+```
+
+Run the app:
+
+```bash
+flutter run
+```
+
+---
+
+## 💪 Building the APK
+
+To build a release APK:
+
+### 1. Generate a keystore (if you don't have one):
+
+```bash
+keytool -genkey -v -keystore upload-keystore.jks -keyalg RSA -keysize 2048 -validity 10000 -alias my-key
+```
+
+### 2. Configure signing in `android/app/build.gradle`
+
+```gradle
+android {
+  ...
+  signingConfigs {
+    release {
+      keyAlias 'my-key'
+      keyPassword 'your-key-password'
+      storeFile file('upload-keystore.jks')
+      storePassword 'your-store-password'
+    }
+  }
+  buildTypes {
+    release {
+      signingConfig signingConfigs.release
+    }
+  }
+}
+```
+
+### 3. Build the APK:
+
+```bash
+flutter build apk --release
+```
+
+The APK will be generated at:
+
+```
+build/app/outputs/flutter-apk/app-release.apk
+```
+
+---
+
+## 📂 Project Structure
+
+```
 weight_tracker/
-  android/       - Android specific files
-  assets/        - Images/fonts
-  ios/           - iOS specific files  
-  lib/
-    screens/     - All app screens
-    models/      - Data models
-    services/    - Business logic
-    main.dart    - App entry point
-  test/          - Test files
-  pubspec.yaml   - Dependencies
+├── android/            # Android specific files
+├── assets/             # Static files (icons, fonts)
+├── ios/                # iOS specific files
+├── lib/                # Main application code
+│   ├── screens/        # All screen widgets
+│   ├── models/         # Data models
+│   ├── services/       # Business logic
+│   └── main.dart       # App entry point
+├── test/               # Test files
+└── pubspec.yaml        # Dependencies configuration
+```
 
-=== KEY DEPENDENCIES ===
-- sqflite: Local database
-- fl_chart: Data visualization  
-- intl: Date formatting
-- share_plus: Data export
-- flutter_launcher_icons: App icon
+---
 
-=== CONTRIBUTING ===
-1. Fork the project
-2. Create feature branch
-3. Commit changes
-4. Push to branch
-5. Open pull request
+## 🛆 Dependencies
 
-=== SCREENSHOTS ===
-Home Screen: View/add entries
-Charts Screen: View trends
-Health Info: View BMI stats
+Main packages used:
 
-=== SUPPORT ===
-Star the repo if you find it useful!
+- [`sqflite`](https://pub.dev/packages/sqflite) – Local database storage  
+- [`fl_chart`](https://pub.dev/packages/fl_chart) – Data visualization  
+- [`intl`](https://pub.dev/packages/intl) – Date formatting  
+- [`share_plus`](https://pub.dev/packages/share_plus) – Data export functionality  
+- [`flutter_launcher_icons`](https://pub.dev/packages/flutter_launcher_icons) – App icon generation  
+
+---
+
+## 🤝 Contributing
+
+Contributions are welcome!  
+---
+
+---
+
+## 💖 Support
+
+If you like this project, give it a ⭐ on GitHub!
+
+**Happy Tracking! 🎯**
